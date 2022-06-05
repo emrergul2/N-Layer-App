@@ -15,7 +15,7 @@ namespace NLayer.Repository.Repositories
         public GenericRepository(AppDbContext context)
         {
             _context = context;
-            _dbSet = _context.Set<T>();
+            _dbSet = _context.Set<T>();                                                                                                                                                             
         }
         public async Task AddAsync(T entity)
         {
