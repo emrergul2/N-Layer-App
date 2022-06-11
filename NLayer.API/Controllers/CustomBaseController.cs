@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs;
 namespace NLayer.API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class CustomBaseController : ControllerBase
     {
         [NonAction]

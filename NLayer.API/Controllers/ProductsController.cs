@@ -11,8 +11,6 @@ using NLayer.Core.Model;
 using NLayer.Core.Services;
 namespace NLayer.API.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
     public class ProductsController : CustomBaseController
     {
         private readonly IMapper _mapper;
