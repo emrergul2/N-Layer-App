@@ -21,10 +21,12 @@ namespace NLayer.API.Middleware
                     var statusCode = exceptionFuture.Error switch
                     {
                         ClientSideException => 400,
+                        NotFoundException => 404,
                         _ => 500
                     };
+                    context.Response.StatusCode = statusCode;
                     var response = CustomResponseDto<NoContentDto>.Fail(statusCode, exceptionFuture.Error.Message);
-                    await context.Response.WriteAsJsonAsync(JsonSerializer.Serialize(response));
+                    await context.Response.WriteAsync(JsonSerializer.Serialize(response));
                 });
             });
         }
